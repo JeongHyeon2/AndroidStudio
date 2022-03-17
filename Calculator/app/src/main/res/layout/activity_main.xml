@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/number1"
+        android:layout_width="411dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="첫번째 숫자"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp" />
+    <EditText
+        android:id="@+id/number2"
+        android:layout_width="411dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="두번째 숫자"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="65dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="addClick"
+            android:text="+"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="121dp" />
+
+        <Button
+            android:id="@+id/subBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="subClick"
+            android:text="-"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="121dp" />
+
+        <Button
+            android:id="@+id/mulBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="mulClick"
+            android:text="*"
+            tools:layout_editor_absoluteX="204dp"
+            tools:layout_editor_absoluteY="121dp" />
+
+        <Button
+            android:id="@+id/devBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="devClick"
+            android:text="/"
+            tools:layout_editor_absoluteX="298dp"
+            tools:layout_editor_absoluteY="121dp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="350dp"
+        android:layout_height="38dp"
+        android:textSize="30dp"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="187dp" />
+
+</LinearLayout>
