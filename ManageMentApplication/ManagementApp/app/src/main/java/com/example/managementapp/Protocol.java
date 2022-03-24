@@ -4,6 +4,9 @@ public class Protocol {
     public static final int PT_UNDEFINED = -1;	// 프로토콜이 지정되어 있지 않은 경우
     public static final int REQ_ADD= 1;	// 회원 등록
     public static final int REQ_DEL= 2;// 회원 삭제
+    public static final int SUCCESS= 3;// 성공
+    public static final int DUP_ID= 4;// id 중복
+
     public static final int LEN_MAX = 1000;		//최대 데이터 길이
     public static final int LEN_PROTOCOL_TYPE=1;
     protected int protocolType;
