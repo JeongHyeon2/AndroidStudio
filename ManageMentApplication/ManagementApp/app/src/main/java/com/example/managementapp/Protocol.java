@@ -5,8 +5,11 @@ public class Protocol {
     public static final int REQ_ADD= 1;	// 회원 등록
     public static final int REQ_DEL= 2;// 회원 삭제
     public static final int SUCCESS= 3;// 성공
-    public static final int DUP_ID= 4;// id 중복
+    public static final int SUCCESS_LOGIN= 7;// 로그인 성공
 
+    public static final int DUP_ID= 4;// id 중복
+    public static final int REQ_LOGIN= 5;// 로그인 요청
+    public static final int FAIL= 6;// 실패
     public static final int LEN_MAX = 1000;		//최대 데이터 길이
     public static final int LEN_PROTOCOL_TYPE=1;
     protected int protocolType;

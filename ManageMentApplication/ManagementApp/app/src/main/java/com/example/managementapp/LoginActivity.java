@@ -19,5 +19,6 @@ public class LoginActivity extends AppCompatActivity {
         EditText passwordText = findViewById(R.id.pwdText);
         TextView textViewMsg = findViewById(R.id.welcomeMsg);
 
+
     }
 }

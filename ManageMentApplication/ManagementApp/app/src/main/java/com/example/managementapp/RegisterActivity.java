@@ -1,6 +1,8 @@
 package com.example.managementapp;
 import java.net.*;
 import java.io.*;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -11,31 +13,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class RegisterActivity extends AppCompatActivity {
-
+public class RegisterActivity extends AppCompatActivity implements Network {
 
 
     public RegisterActivity() throws IOException {
+
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         try {
-
-            final Socket[] socket = new Socket[1];
-            final OutputStream[] os = new OutputStream[1];
-            final InputStream[] is = new InputStream[1];
-
-            new Thread(() -> {
-                try {
-                    socket[0] = new Socket("192.168.0.6", 3003);
-                     os[0] = socket[0].getOutputStream();
-                     is[0] = socket[0].getInputStream();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }).start();
-
 
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_register);
@@ -65,7 +52,6 @@ public class RegisterActivity extends AppCompatActivity {
                     }).start();
                 }
             });
-
             new Thread(()-> {
                 while (true) {
                     Protocol protocol = new Protocol(); // 새 Protocol 객체 생성
@@ -79,14 +65,14 @@ public class RegisterActivity extends AppCompatActivity {
 
                     switch (packetType) {
                         case Protocol.SUCCESS:
-                            Handler handler = new Handler(Looper.getMainLooper());
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run()
-                                {
-                                    Toast.makeText(RegisterActivity.this, "계정 생성 성공!", Toast.LENGTH_SHORT).show();
-                                }
-                            }, 0);
+//                            Handler handler = new Handler(Looper.getMainLooper());
+//                            handler.postDelayed(new Runnable() {
+//                                @Override
+//                                public void run()
+//                                {
+//                                    Toast.makeText(MainActivity.this, "계정 생성 성공!", Toast.LENGTH_SHORT).show();
+//                                }
+//                            }, 0);
                             finish();
                             break;
                             case Protocol.DUP_ID:
@@ -100,7 +86,15 @@ public class RegisterActivity extends AppCompatActivity {
                                 }, 0);
                                 break;
                         default:
-                            Toast.makeText(RegisterActivity.this,"서버 오류입니다." ,Toast.LENGTH_SHORT).show();
+                            Handler handler3 = new Handler(Looper.getMainLooper());
+                            handler3.postDelayed(new Runnable() {
+                                @Override
+                                public void run()
+                                {
+                                    Toast.makeText(RegisterActivity.this, "서버 오류입니다.", Toast.LENGTH_SHORT).show();
+                                }
+                            }, 0);
+                            break;
                     }
                 }
             }).start();
