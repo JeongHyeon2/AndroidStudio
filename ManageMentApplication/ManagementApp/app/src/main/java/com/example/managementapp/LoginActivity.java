@@ -15,9 +15,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText idText = findViewById(R.id.idText);
-        EditText passwordText = findViewById(R.id.pwdText);
-        TextView textViewMsg = findViewById(R.id.welcomeMsg);
+        TextView textView = findViewById(R.id.welcomMsg);
+        Intent intent = getIntent();
+        textView.setText(intent.getStringExtra("id")+"님 환영합니다!");
+
+
 
 
     }
