@@ -52,6 +52,16 @@ public class RegisterActivity extends AppCompatActivity implements Network {
                     String pwd = passwordText.getText().toString();
                     String name = nameText.getText().toString();
                     String age = ageText.getText().toString();
+                    if(id.equals("")||pwd.equals("")||name.equals("")||age.equals("")){
+                        Handler handler = new Handler(Looper.getMainLooper());
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(RegisterActivity.this, "빈칸이 있습니다!", Toast.LENGTH_SHORT).show();
+                            }
+                        }, 0);
+                        return;
+                    }
                     protocol.setData("/" + id + "/" + pwd + "/" + name + "/" + age + "/");
                     byte[] bf = protocol.getPacket();
                     new Thread(() -> {

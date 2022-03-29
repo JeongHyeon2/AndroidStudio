@@ -18,7 +18,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
-public class MainActivity extends AppCompatActivity implements Network{
+public class MainActivity extends AppCompatActivity implements Network {
 
 //    final Socket[] socket;
 //    final OutputStream[] os;
@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements Network{
         setContentView(R.layout.activity_login);
 
 
-
         EditText idText = findViewById(R.id.idText);
         EditText passwordText = findViewById(R.id.pwdText);
         Button loginButton = findViewById(R.id.loginBtn);
@@ -56,8 +55,8 @@ public class MainActivity extends AppCompatActivity implements Network{
         regiButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new Thread(()-> {
-                    Intent  intent = new Intent(MainActivity.this, RegisterActivity.class);
+                new Thread(() -> {
+                    Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                     startActivity(intent);
                 }).start();
             }
@@ -68,6 +67,16 @@ public class MainActivity extends AppCompatActivity implements Network{
                 @Override
                 public void onClick(View view) {
                     new Thread(() -> {
+                        if(idText.getText().toString().equals("") || passwordText.getText().toString().equals("")){
+                            Handler handler = new Handler(Looper.getMainLooper());
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(MainActivity.this, "ID 또는 비밀번호를 입력해주세요!", Toast.LENGTH_SHORT).show();
+                                }
+                            }, 0);
+                            return;
+                        }
                         Protocol protocol = new Protocol(Protocol.REQ_LOGIN);
                         protocol.setData("/" + idText.getText().toString() + "/" + passwordText.getText().toString() + "/");
                         try {
@@ -89,6 +98,7 @@ public class MainActivity extends AppCompatActivity implements Network{
                             int packetType = buf[0]; // 수신 데이터에서 패킷 타입 얻음
 
                             Handler handler = new Handler(Looper.getMainLooper());
+
                             switch (packetType) {
                                 case Protocol.SUCCESS_LOGIN:
 
@@ -114,6 +124,7 @@ public class MainActivity extends AppCompatActivity implements Network{
                                     handler.postDelayed(new Runnable() {
                                         @Override
                                         public void run() {
+
                                             Toast.makeText(MainActivity.this, "서버 오류입니다.", Toast.LENGTH_SHORT).show();
                                         }
                                     }, 0);
@@ -122,9 +133,8 @@ public class MainActivity extends AppCompatActivity implements Network{
                     }).start();
 
                 }
-
             });
-        }catch (Exception e){
+        } catch (Exception e) {
             Toast.makeText(MainActivity.this, "서버오류입니다.", Toast.LENGTH_SHORT).show();
 
         }
