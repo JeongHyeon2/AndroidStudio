@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements Network {
     protected void onCreate(Bundle savedInstanceState) {
         new Thread(() -> {
             try {
-                socket[0] = new Socket("192.168.0.6", 3003);
-                os[0] = socket[0].getOutputStream();
+                socket[0] = new Socket("192.168.0.71", 3003);
+                os[0] = socket[0].getOutputStream(); 
                 is[0] = socket[0].getInputStream();
             } catch (IOException e) {
                 e.printStackTrace();
