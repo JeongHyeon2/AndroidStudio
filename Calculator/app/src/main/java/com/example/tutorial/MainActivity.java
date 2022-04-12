@@ -20,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         EditText expr = findViewById(R.id.expression);
-        Button button1, button2, button3, button4, button5, button6, button7, button8, button9, button0, addBtn, mulBtn, devBtn, subBtn, deleteBtn, clearBtn, calculateBtn;
+        expr.setEnabled(false);
+        Button button1, button2, button3, button4, button5,
+                button6, button7, button8, button9, button0, addBtn, mulBtn,
+                devBtn, subBtn, deleteBtn, clearBtn, calculateBtn, openBracket,closeBracket,modulo;
+        openBracket = findViewById(R.id.openBracket);
+        closeBracket = findViewById(R.id.closeBracket);
+        modulo = findViewById(R.id.btnModulo);
         calculateBtn = findViewById(R.id.calculate);
         clearBtn = findViewById(R.id.clearBtn);
         deleteBtn = findViewById(R.id.deleteBtn);
@@ -53,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     if(exp.equals("")) return;
 
                     ArrayList<Character> arr = new ArrayList<Character>();
-                    if (!(exp.charAt(0) >= '0' && exp.charAt(0) <= '9')) {
+                    if (!(exp.charAt(0) >= '0' && exp.charAt(0) <= '9')&&exp.charAt(0)!='-') {
                         expr.setText("오류");
                     } else {
                         arr.add(exp.charAt(0));
@@ -69,11 +75,12 @@ public class MainActivity extends AppCompatActivity {
                             arr.add(exp.charAt(i));
                         }
                     }
-                    StringBuffer sb = new StringBuffer();
+                    StringBuilder sb = new StringBuilder();
 
                     for (int i = 0; i < arr.size(); i++) {
                         sb.append(arr.get(i));
                     }
+
                     try {
                         calculator.cal(sb.toString());
                         expr.setText(calculator.getAnswer());
@@ -95,6 +102,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 exp = "";
+                expr.setText(exp);
+            }
+        });
+        modulo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exp+="%";
+                expr.setText(exp);
+            }
+        });
+        closeBracket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exp+=")";
+                expr.setText(exp);
+            }
+        });
+        openBracket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exp += "(";
                 expr.setText(exp);
             }
         });
