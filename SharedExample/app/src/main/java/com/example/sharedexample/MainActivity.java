@@ -29,23 +29,31 @@ public class MainActivity extends AppCompatActivity {
 
 
         et_save = findViewById(R.id.et_save);
-        btn = findViewById(R.id.btn);
+        btn = findViewById(R.id.btn_edit);
 
 
         et_save.setText(myStr);
+//
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                myStr = et_save.getText().toString();
+//                editor.putString("MyStr", myStr);
+//                editor.apply();
+//                Toast.makeText(getApplicationContext(), "저장 완료", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                myStr = et_save.getText().toString();
-                editor.putString("MyStr", myStr);
-                editor.apply();
-                Toast.makeText(getApplicationContext(), "저장 완료", Toast.LENGTH_SHORT).show();
 
-            }
-        });
+    }
 
-
+    @Override
+    protected void onPause(){
+        super.onPause();
+        myStr = et_save.getText().toString();
+        editor.putString("MyStr", myStr);
+        editor.apply();
     }
 
 }
