@@ -1,5 +1,6 @@
 package com.example.sharedexample;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -28,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        ActionBar ac = getSupportActionBar();
+//        ac.setTitle("회원가입");
+
 //          myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
 //        setContentView(myToolbar);
 
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         et_save = findViewById(R.id.et_save);
-        btn = findViewById(R.id.btn_edit);
+//        btn = findViewById(R.id.btn_edit);
 
 
         et_save.setText(myStr);
