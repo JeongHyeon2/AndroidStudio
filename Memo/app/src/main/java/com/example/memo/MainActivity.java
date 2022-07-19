@@ -42,19 +42,15 @@ public class MainActivity extends AppCompatActivity{
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
              Intent intent = new Intent(MainActivity.this,PopUpActivity.class);
              startActivity(intent);
-
             }
         });
 
-
         SharedPreferences sharedPreferences = getSharedPreferences(shared, 0);
         String value = sharedPreferences.getString("key","");
-        value_size = sharedPreferences.getInt("val",0);
+        value_size = sharedPreferences.getInt("val",15);
         et_save.setText(value);
-
         et_save.setTextSize(value_size);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,9 +64,5 @@ public class MainActivity extends AppCompatActivity{
                 Toast.makeText(getApplicationContext(), "저장완료", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
     }
-
 }
