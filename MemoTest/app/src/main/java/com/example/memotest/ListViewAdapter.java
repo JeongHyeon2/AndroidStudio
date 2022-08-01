@@ -1,12 +1,15 @@
 package com.example.memotest;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
+
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import java.util.ArrayList;
 
@@ -14,16 +17,20 @@ public class ListViewAdapter extends BaseAdapter {
     private TextView titleTextView;
     private TextView contentTextView;
 
-    private ArrayList<Memo> listViewItemList = new ArrayList<Memo>();
+     ArrayList<Memo> listViewItemList = new ArrayList<Memo>();
+
 
     // ListViewAdapter의 생성자
     public ListViewAdapter() {
 
+
     }
+
 
     // Adapter에 사용되는 데이터의 개수를 리턴
     @Override
     public int getCount() {
+
         return listViewItemList.size();
     }
     @Override
@@ -38,8 +45,8 @@ public class ListViewAdapter extends BaseAdapter {
         }
 
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        titleTextView = (TextView) convertView.findViewById(R.id.tv_title);
-        contentTextView = (TextView) convertView.findViewById(R.id.tv_content);
+        titleTextView = (TextView) convertView.findViewById(R.id.tv_memo_title);
+        contentTextView = (TextView) convertView.findViewById(R.id.tv_memo_content);
 
         Memo listViewItem = listViewItemList.get(position);
 
@@ -68,4 +75,17 @@ public class ListViewAdapter extends BaseAdapter {
         item.setContent(content);
         listViewItemList.add(item);
     }
+    // 아이템 데이터 추가를 위한 함수.
+    public void deleteItem(String title) {
+
+        for(int i=0;i<listViewItemList.size();i++){
+            if(listViewItemList.get(i).getTitle().equals(title)){
+                listViewItemList.remove(i);
+            }
+        }
+    }
+    public void updateItem(String title,String content){
+
+    }
+
 }

@@ -13,9 +13,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "memo_table"; // 테이블 명
 
     // 테이블 항목
-    public static final String COL_1 = "ID";
-    public static final String COL_2 = "title";
-    public static final String COL_3 = "content";
+    public static final String COL_1 = "title";
+    public static final String COL_2 = "content";
 
 
     public DatabaseHelper(@Nullable Context context) {
@@ -24,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, TITLE TEXT, CONTENT TEXT)");
+        db.execSQL("create table " + TABLE_NAME + "(TITLE TEXT PRIMARY KEY , CONTENT TEXT)");
     }
 
     @Override
@@ -36,8 +35,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean insertData(String title, String content){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2,title);
-        contentValues.put(COL_3,content);
+        contentValues.put(COL_1,title);
+        contentValues.put(COL_2,content);
         long result = db.insert(TABLE_NAME, null,contentValues);
         if(result == -1)
             return false;
@@ -53,19 +52,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return  res;
     }
     // 데이터베이스 삭제하기
-    public Integer deleteData(String id){
+    public Integer deleteData(String title){
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABLE_NAME, "ID = ? ",new String[]{id});
+       // db.execSQL("DELETE FROM "+TABLE_NAME+" WHERE title=" + title);
+       return db.delete(TABLE_NAME,"TITLE = ?", new String[] { title });
     }
 
     //데이터베이스 수정하기
-    public boolean updateData(String id, String title, String content){
+    public boolean updateData(String title, String content){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1,id);
-        contentValues.put(COL_2,title);
-        contentValues.put(COL_3,content);
-        db.update(TABLE_NAME,contentValues,"ID = ?", new String[] { id });
+        contentValues.put(COL_1,title);
+        contentValues.put(COL_2,content);
+        db.update(TABLE_NAME,contentValues,"TITLE = ?", new String[] { title });
         return true;
     }
 

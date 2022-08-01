@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/35752/AndroidStudioProjects/MemoTest/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/35752/AndroidStudioProjects/MemoTest/app/src/main/res/layout/activity_memo.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/MemoTest/app/src/main/res/layout/activity_memo.xml" value="0.22" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/MemoTest/app/src/main/res/layout/activity_memo_item.xml" value="0.25" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/MemoTest/app/src/main/res/layout/activity_popup.xml" value="0.358695652173913" />
       </map>
     </option>
   </component>

@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
+    android:layout_height="wrap_content"
+    android:id="@+id/constraintLayout">
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/tv_memo_title"
         android:layout_width="325dp"
         android:layout_height="26dp"
         android:text="Title"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
     <TextView
-        android:id="@+id/tv_content"
+        android:id="@+id/tv_memo_content"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_marginTop="1dp"
@@ -26,6 +26,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"></TextView>
+        app:layout_constraintTop_toBottomOf="@+id/tv_memo_title"></TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
