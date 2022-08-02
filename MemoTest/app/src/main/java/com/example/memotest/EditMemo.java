@@ -1,12 +1,14 @@
 package com.example.memotest;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +29,7 @@ public class EditMemo extends AppCompatActivity {
         content=findViewById(R.id.et_content);
         btn = findViewById(R.id.button_save);
 
+
         Intent intent = getIntent();
         title.setText(intent.getStringExtra("title"));
         content.setText(intent.getStringExtra("content"));
@@ -34,6 +37,11 @@ public class EditMemo extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                MainActivity.myDB.updateData(title.getText().toString(),content.getText().toString());
+                MainActivity.adapter.updateItem(title.getText().toString(),content.getText().toString());
+                MainActivity.adapter.notifyDataSetChanged();
+
+                Toast.makeText(EditMemo.this,"저장완료",Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -45,5 +53,11 @@ public class EditMemo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+
+        super.onStop();
     }
 }

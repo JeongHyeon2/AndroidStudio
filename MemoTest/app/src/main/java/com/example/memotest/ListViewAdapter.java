@@ -84,8 +84,14 @@ public class ListViewAdapter extends BaseAdapter {
             }
         }
     }
-    public void updateItem(String title,String content){
 
+    public void updateItem(String title,String content){
+        for(int i=0;i<listViewItemList.size();i++){
+            if(listViewItemList.get(i).getTitle().equals(title)){
+                listViewItemList.get(i).setTitle(title);
+                listViewItemList.get(i).setContent(content);
+            }
+        }
     }
 
 }

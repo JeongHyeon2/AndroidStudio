@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
-        android:layout_height="500dp"
+        android:layout_height="600dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -47,45 +47,23 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
-        android:id="@+id/et_content_temp"
-        android:layout_width="228dp"
-        android:layout_marginTop="10dp"
-        android:layout_height="45dp"
-        android:layout_marginRight="50dp"
-        android:hint="내용"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_title"></EditText>
-
-    <EditText
         android:id="@+id/et_title"
         android:layout_width="228dp"
         android:layout_height="45dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="48dp"
         android:hint="제목"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayout"
-        android:layout_marginRight="50dp"></EditText>
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout"></EditText>
 
     <Button
         android:id="@+id/btn_add"
         android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:text="추가"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="554dp"
         app:layout_constraintEnd_toStartOf="@id/et_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintLayout"
-        android:layout_marginTop="55dp"/>
-
-    <Button
-        android:id="@+id/btn_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="삭제"
-        app:layout_constraintEnd_toStartOf="@id/et_title"
-        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintHorizontal_bias="0.355"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
 

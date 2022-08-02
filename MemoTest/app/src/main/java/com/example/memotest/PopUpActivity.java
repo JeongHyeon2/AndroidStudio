@@ -26,6 +26,8 @@ public class PopUpActivity extends AppCompatActivity {
                 EditMemo.content.setTextSize(value_popUp);
                 textView.setText(String.valueOf(value_popUp));
                 EditMemo.value_size = value_popUp;
+
+
             }
 
             @Override

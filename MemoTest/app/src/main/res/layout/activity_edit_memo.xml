@@ -85,7 +85,7 @@
         android:background="#0277BD"
         android:text="저장"
         android:textColor="@color/white"
-        android:textSize="15dp"
+        android:textSize="13dp"
         app:layout_constraintBottom_toTopOf="@+id/et_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="@id/toolbar_first"
