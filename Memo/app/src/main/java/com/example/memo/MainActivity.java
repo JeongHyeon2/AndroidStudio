@@ -1,22 +1,15 @@
 package com.example.memo;
 
-import androidx.activity.result.ActivityResult;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.SeekBar;
-import android.widget.TextView;
 import android.widget.Toast;
 public class MainActivity extends AppCompatActivity{
     static int value_size =15;
@@ -28,13 +21,12 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar_first);
         setSupportActionBar(toolbar);
 
 
         setContentView(R.layout.activity_main);
-        et_save= findViewById(R.id.editText);
+        et_save= findViewById(R.id.etContents);
         btn = findViewById(R.id.button_save);
         imageView = findViewById(R.id.imageView2);
 
