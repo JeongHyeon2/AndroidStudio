@@ -2,6 +2,7 @@ package com.example.memotest;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +11,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class EditMemo extends AppCompatActivity {
 
@@ -39,10 +46,16 @@ public class EditMemo extends AppCompatActivity {
         content.setTextSize(value_size);
 
         btn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
-                MainActivity.myDB.updateData(title.getText().toString(),content.getText().toString());
-                MainActivity.adapter.updateItem(title.getText().toString(),content.getText().toString());
+                Date time = new Date();
+                SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd HH시 mm분 ss초");
+                // 포맷 적용
+                String now= format.format(time);
+
+                MainActivity.myDB.updateData(title.getText().toString(),content.getText().toString(),now);
+                MainActivity.adapter.updateItem(title.getText().toString(),content.getText().toString(),now);
                 MainActivity.adapter.notifyDataSetChanged();
 
                 Toast.makeText(EditMemo.this,"저장완료",Toast.LENGTH_SHORT).show();

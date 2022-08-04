@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class ListViewAdapter extends BaseAdapter {
     private TextView titleTextView;
     private TextView contentTextView;
-
+    private TextView dateTextView;
      ArrayList<Memo> listViewItemList;
 
 
@@ -47,13 +47,17 @@ public class ListViewAdapter extends BaseAdapter {
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         titleTextView = (TextView) convertView.findViewById(R.id.tv_memo_title);
         contentTextView = (TextView) convertView.findViewById(R.id.tv_memo_content);
+        dateTextView = convertView.findViewById(R.id.tv_date);
+
         titleTextView.setTextSize(20);
         titleTextView.setTextColor(Color.BLACK);
+
         Memo listViewItem = listViewItemList.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
         titleTextView.setText(listViewItem.getTitle());
         contentTextView.setText(listViewItem.getContent());
+        dateTextView.setText(listViewItem.getDate());
 
         return convertView;
     }
@@ -70,10 +74,12 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     // 아이템 데이터 추가를 위한 함수.
-    public void addItem(String title, String content) {
+    public void addItem(String title, String content,String date) {
         Memo item = new Memo();
         item.setTitle(title);
         item.setContent(content);
+        item.setDate(date);
+
         listViewItemList.add(item);
     }
     // 아이템 데이터 추가를 위한 함수.
@@ -86,11 +92,12 @@ public class ListViewAdapter extends BaseAdapter {
         }
     }
 
-    public void updateItem(String title,String content){
+    public void updateItem(String title,String content,String date){
         for(int i=0;i<listViewItemList.size();i++){
             if(listViewItemList.get(i).getTitle().equals(title)){
                 listViewItemList.get(i).setTitle(title);
                 listViewItemList.get(i).setContent(content);
+                listViewItemList.get(i).setDate(date);
             }
         }
     }

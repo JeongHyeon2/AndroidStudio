@@ -1,5 +1,6 @@
 package com.example.memotest;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,15 +9,23 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class PopUpActivityForCreate extends AppCompatActivity {
     EditText editText;
     Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_popup_create);
+
 
         editText = findViewById(R.id.et_title);
         btn = findViewById(R.id.btn_add);
@@ -33,8 +42,12 @@ public class PopUpActivityForCreate extends AppCompatActivity {
                         return;
                     }
                 }
-                MainActivity.adapter.addItem(editText.getText().toString(),"");
-                MainActivity.myDB.insertData(editText.getText().toString(),"");
+                Date time = new Date();
+                SimpleDateFormat format = new SimpleDateFormat ( "yyyy-MM-dd HH시 mm분 ss초");
+                // 포맷 적용
+                String now= format.format(time);
+                MainActivity.adapter.addItem(editText.getText().toString(),"",now);
+                MainActivity.myDB.insertData(editText.getText().toString(),"",now);
                 finish();
             }
         });
