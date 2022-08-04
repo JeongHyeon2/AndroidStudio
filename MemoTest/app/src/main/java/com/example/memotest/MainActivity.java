@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -26,10 +27,15 @@ public class MainActivity extends AppCompatActivity {
     static  ListViewAdapter adapter;
     ConstraintLayout constraintLayout;
     FloatingActionButton fab;
+    private SharedPreferences preferences;
+    SharedPreferences.Editor editor ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        preferences = getSharedPreferences("size", MODE_PRIVATE);
+        editor= preferences.edit();
 
         myDB = new DatabaseHelper(this);
 
@@ -46,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         constraintLayout = findViewById(R.id.constraintLayout);
         fab = findViewById(R.id.fab);
 
+
+        EditMemo.value_size =  preferences.getInt("text_size",15);
         viewAll();
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, EditMemo.class);
                 intent.putExtra("title",adapter.listViewItemList.get(i).getTitle());
                 intent.putExtra("content",adapter.listViewItemList.get(i).getContent());
+
                 startActivity(intent);
             }
         });
@@ -115,5 +124,14 @@ public class MainActivity extends AppCompatActivity {
         while (res.moveToNext()) {
             adapter.addItem(res.getString(1), res.getString(2));
         }
+    }
+
+    @Override
+    protected void onStop() {
+        
+        editor.putInt("text_size",EditMemo.value_size);
+        editor.commit();
+
+        super.onStop();
     }
 }

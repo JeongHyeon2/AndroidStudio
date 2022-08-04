@@ -19,6 +19,7 @@ public class EditMemo extends AppCompatActivity {
     static EditText content;
     ImageView iv;
     Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,9 @@ public class EditMemo extends AppCompatActivity {
         Intent intent = getIntent();
         title.setText(intent.getStringExtra("title"));
         content.setText(intent.getStringExtra("content"));
+
+
+        content.setTextSize(value_size);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,9 +59,5 @@ public class EditMemo extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onStop() {
 
-        super.onStop();
-    }
 }

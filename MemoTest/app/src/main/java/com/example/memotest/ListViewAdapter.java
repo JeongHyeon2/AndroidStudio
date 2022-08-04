@@ -18,20 +18,18 @@ public class ListViewAdapter extends BaseAdapter {
     private TextView titleTextView;
     private TextView contentTextView;
 
-     ArrayList<Memo> listViewItemList = new ArrayList<Memo>();
+     ArrayList<Memo> listViewItemList;
 
 
     // ListViewAdapter의 생성자
     public ListViewAdapter() {
-
-
+        listViewItemList  = new ArrayList<Memo>();
     }
 
 
     // Adapter에 사용되는 데이터의 개수를 리턴
     @Override
     public int getCount() {
-
         return listViewItemList.size();
     }
     @Override
