@@ -17,36 +17,45 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
     static DatabaseHelper myDB;
     private ScrollView scrollView;
     private ListView listview;
     static  ListViewAdapter adapter;
-    EditText et_title;
-    Button btn_add;
     ConstraintLayout constraintLayout;
+    FloatingActionButton fab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         myDB = new DatabaseHelper(this);
 
         // Adapter 생성
         adapter = new ListViewAdapter();
 
-        et_title = findViewById(R.id.et_title);
-        btn_add = findViewById(R.id.btn_add);
+//        et_title = findViewById(R.id.et_title);
+//        btn_add = findViewById(R.id.btn_add);
 
         // 리스트뷰 참조 및 Adapter 달기
         listview = (ListView) findViewById(R.id.listview);
         listview.setAdapter(adapter);
         scrollView = findViewById(R.id.main_box_scrollview);
         constraintLayout = findViewById(R.id.constraintLayout);
+        fab = findViewById(R.id.fab);
 
         viewAll();
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,PopUpActivityForCreate.class);
+                startActivity(intent);
+                MainActivity.adapter.notifyDataSetChanged();
+            }
+        });
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -66,18 +75,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        btn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                adapter.addItem(et_title.getText().toString(),"");
-                addData();
-                et_title.setText("");
-                adapter.notifyDataSetChanged();
-            }
-        });
-
         listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view,
@@ -88,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle("삭제")
                         .setMessage("\""+title+"\"을/를 삭제 하시겠습니까?")
-                        .setIcon(R.drawable.ic_launcher_foreground)
+                        .setIcon(android.R.drawable.ic_menu_delete)
                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 // 확인시 처리 로직
@@ -107,28 +104,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    //데이터베이스 추가하기
-    public void addData() {
-        boolean isInserted = myDB.insertData(et_title.getText().toString(),
-                "");
-        if (isInserted == true)
-            Toast.makeText(MainActivity.this, "데이터추가 성공", Toast.LENGTH_SHORT).show();
-        else
-            Toast.makeText(MainActivity.this, "데이터추가 실패", Toast.LENGTH_SHORT).show();
-
-    }
-    //데이터베이스 추가하기
-    public void deleteData(String title) {
-     int count = myDB.deleteData(title);
-     if(count>0)   Toast.makeText(MainActivity.this, "데이터삭제 성공", Toast.LENGTH_SHORT).show();
-     else Toast.makeText(MainActivity.this, "데이터삭제 실패", Toast.LENGTH_SHORT).show();
-
-    }
-    public void updateData(String title,String content){
-        myDB.updateData(title,content);
-    }
-
 
     // 데이터베이스 읽어오기
     public void viewAll() {

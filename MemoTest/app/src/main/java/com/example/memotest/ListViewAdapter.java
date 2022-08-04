@@ -2,6 +2,7 @@ package com.example.memotest;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,10 +45,12 @@ public class ListViewAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.activity_memo_item, parent, false);
         }
 
+
         // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
         titleTextView = (TextView) convertView.findViewById(R.id.tv_memo_title);
         contentTextView = (TextView) convertView.findViewById(R.id.tv_memo_content);
-
+        titleTextView.setTextSize(20);
+        titleTextView.setTextColor(Color.BLACK);
         Memo listViewItem = listViewItemList.get(position);
 
         // 아이템 내 각 위젯에 데이터 반영
