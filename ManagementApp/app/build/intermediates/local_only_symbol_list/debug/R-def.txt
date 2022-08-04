@@ -1,0 +1,35 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color colorAccent
+color colorGray
+color colorPrimary
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable button_login
+drawable edittext_login
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id ageText
+id editTextTextPersonName
+id editTextTextPersonName2
+id idText
+id loginBtn
+id nameText
+id pwdText
+id registerBtn
+id registerButton
+id textView
+id textView2
+id welcomMsg
+layout activity_login
+layout activity_main
+layout activity_register
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Theme.ManagementApp

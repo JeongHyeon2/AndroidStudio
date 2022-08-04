@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5cfb218a-df70-4a51-8013-a36cb81eda8e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Memo/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/androidTest/java/com/example/managementapp/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/java/com/example/managementapp/LoginActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/java/com/example/managementapp/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/java/com/example/managementapp/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/java/com/example/managementapp/Network.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/java/com/example/managementapp/Protocol.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/java/com/example/managementapp/RegisterActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/drawable/button_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/drawable/edittext_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/layout/activity_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/layout/activity_register.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/app/src/test/java/com/example/managementapp/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementApp/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/database.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/out/production/database/DuplicationException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/out/production/database/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/out/production/database/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/out/production/database/MemberManagement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/out/production/database/Protocol.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/out/production/database/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/out/production/database/ThreadServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/MemberManagement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/Protocol.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/src/ThreadServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Setting/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Setting/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TestApp/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../TestApp/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Tutorial3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Tutorial3/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2BmOjOtUgHODECHLMZYHK4GXnuU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ManagementApp" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5cfb218a-df70-4a51-8013-a36cb81eda8e" name="Default Changelist" comment="" />
+      <created>1657507927845</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657507927845</updated>
+    </task>
+    <servers />
+  </component>
+</project>
