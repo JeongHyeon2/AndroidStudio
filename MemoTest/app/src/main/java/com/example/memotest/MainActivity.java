@@ -3,6 +3,7 @@ package com.example.memotest;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -34,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton fab;
     private SharedPreferences preferences;
     SharedPreferences.Editor editor ;
-
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,9 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Adapter 생성
         adapter = new ListViewAdapter();
-
-//        et_title = findViewById(R.id.et_title);
-//        btn_add = findViewById(R.id.btn_add);
 
         // 리스트뷰 참조 및 Adapter 달기
         listview = (ListView) findViewById(R.id.listview);
