@@ -58,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
 
         myDB = new DatabaseHelper(this);
 
-        // Adapter 생성
-        adapter = new ListViewAdapter();
 
         // 리스트뷰 참조 및 Adapter 달기
         constraintLayout = findViewById(R.id.constraintLayout);
@@ -89,7 +87,11 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         StringBuffer buffer = new StringBuffer();
+
         while (res.moveToNext()) {
+
+
+
             adapter.addItem(res.getString(0), res.getString(1),res.getString(2),Integer.parseInt(res.getString(3)));
         }
     }

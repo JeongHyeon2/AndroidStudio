@@ -59,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public Cursor getData(String title){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+TABLE_NAME +"WHERE = " +title,null);
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME +" WHERE title = '"+title+"'",null);
         return  res;
     }
     // 데이터베이스 삭제하기

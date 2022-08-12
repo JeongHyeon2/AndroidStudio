@@ -1,8 +1,6 @@
 package com.example.memotest;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -23,18 +21,18 @@ public class EditMemo extends AppCompatActivity {
     static int value_size =15;
     TextView title;
     static EditText content;
-    ImageView iv;
-    Button btn;
+    ImageView iv_setting,iv_save;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_memo);
 
-        iv = findViewById(R.id.iv_setting);
+        iv_setting = findViewById(R.id.iv_setting);
         title=findViewById(R.id.tv_title);
         content=findViewById(R.id.et_content);
-        btn = findViewById(R.id.button_save);
+        iv_save = findViewById(R.id.iv_save);
 
 
         Intent intent = getIntent();
@@ -44,7 +42,7 @@ public class EditMemo extends AppCompatActivity {
 
         content.setTextSize(value_size);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        iv_save.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onClick(View view) {
@@ -63,7 +61,7 @@ public class EditMemo extends AppCompatActivity {
             }
         });
 
-        iv.setOnClickListener(new View.OnClickListener() {
+        iv_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(EditMemo.this,PopUpActivity.class);

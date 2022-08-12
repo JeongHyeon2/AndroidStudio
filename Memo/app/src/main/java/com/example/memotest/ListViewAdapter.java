@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +26,10 @@ import java.util.Collections;
 
 public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ItemViewHolder> implements ItemTouchHelperListener {
     static ArrayList<Memo> listViewItemList  = new ArrayList<>();
-
+//    //MainActivity activity;
+//    public ListViewAdapter(MainActivity activity){
+//        this.activity = activity;
+//    }
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -77,29 +81,45 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ItemVi
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
         TextView title,content,date;
+        ImageView iv;
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.tv_memo_title);
             content = itemView.findViewById(R.id.tv_memo_content);
             date = itemView.findViewById(R.id.tv_date);
-
-
-
+            iv=itemView.findViewById(R.id.imageView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    notifyDataSetChanged();
+                }
+            });
+            content.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(itemView.getContext(),EditMemo.class);
+                    intent.putExtra("title",title.getText().toString());
+                    intent.putExtra("content",content.getText().toString());
+                    itemView.getContext().startActivity(intent);
 
+                    notifyDataSetChanged();
+                }
+            });
+            title.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
                     Intent intent = new Intent(itemView.getContext(),EditMemo.class);
                     intent.putExtra("title",title.getText().toString());
                     intent.putExtra("content",content.getText().toString());
                     itemView.getContext().startActivity(intent);
                     notifyDataSetChanged();
+
                 }
             });
-            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            iv.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public boolean onLongClick(View view) {
+                public void onClick(View view) {
                 // 이벤트 처리 종료 , 여기만 리스너 적용시키고 싶으면 true , 아니면 false
                     new AlertDialog.Builder(itemView.getContext())
                             .setTitle("삭제")
@@ -118,9 +138,9 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ItemVi
 
                                 }})
                             .show();
-                    return true;
                 }
             });
+
 
 
         }
@@ -163,18 +183,15 @@ public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ItemVi
         for(int i=0;i<listViewItemList.size();i++){
             if(listViewItemList.get(i).getTitle().equals(title)){
                 if(listViewItemList.get(i).getContent().equals(content)) return;
-                System.out.println(listViewItemList.get(i).getTitle());
-                System.out.println(content);
-
                 listViewItemList.get(i).setTitle(title);
                 listViewItemList.get(i).setContent(content);
                 listViewItemList.get(i).setDate(date);
-
+                notifyItemChanged(i);
             }
-
         }
-        Cursor res = MainActivity.myDB.getData(title);
-        MainActivity.adapter.notifyItemChanged(Integer.parseInt(res.getString(3)));
+
+
 
     }
+
 }
