@@ -26,10 +26,6 @@ import java.util.Collections;
 
 public class ListViewAdapter extends RecyclerView.Adapter<ListViewAdapter.ItemViewHolder> implements ItemTouchHelperListener {
     static ArrayList<Memo> listViewItemList  = new ArrayList<>();
-//    //MainActivity activity;
-//    public ListViewAdapter(MainActivity activity){
-//        this.activity = activity;
-//    }
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
