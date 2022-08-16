@@ -5,82 +5,67 @@
     android:layout_height="match_parent">
 
     <androidx.appcompat.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/toolbar_first"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginBottom="5dp"
-        android:background="@color/teal_700"
-        app:layout_constraintBottom_toTopOf="@+id/et_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        android:background="@color/teal_700" />
 
 
     <EditText
         android:id="@+id/et_content"
-        android:layout_width="400dp"
-        android:layout_height="669dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="내용을 입력해주세요."
         android:background="@null"
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_first"
+        android:layout_marginTop="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
         android:gravity="top"
         android:lineSpacingExtra="3dp"
         android:scrollbars="vertical"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_save"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="69dp" />
 
     <ImageView
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toTopOf="@id/toolbar_first"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_first"
+        app:layout_constraintEnd_toEndOf="parent"
+
         android:id="@+id/iv_save"
         android:layout_width="40dp"
         android:layout_height="36dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/et_content"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar_first"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintRight_toRightOf="@id/toolbar_first"
-        app:layout_constraintStart_toEndOf="@+id/tv_title"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_save" />
+        app:srcCompat="@android:drawable/ic_menu_save"
+        tools:layout_editor_absoluteX="362dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar_first"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_first"
+        android:layout_marginLeft="10dp"
         android:id="@+id/tv_title"
-        android:layout_width="289dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="21dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="메모장"
         android:textColor="@color/white"
         android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar_first"
-        app:layout_constraintLeft_toLeftOf="@id/toolbar_first"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <ImageView
         android:id="@+id/iv_setting"
         android:layout_width="39dp"
         android:layout_height="36dp"
-        android:layout_marginRight="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar_first"
-        app:layout_constraintEnd_toStartOf="@+id/iv_save"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tv_title"
-        app:layout_constraintTop_toTopOf="@+id/toolbar_first"
-        app:layout_constraintVertical_bias="0.571"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar_first"
+        app:layout_constraintEnd_toStartOf="@id/iv_save"
+        android:layout_marginRight="15dp"
+        app:layout_constraintTop_toTopOf="@id/toolbar_first"
         app:srcCompat="@mipmap/ic_launcher_setting_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
