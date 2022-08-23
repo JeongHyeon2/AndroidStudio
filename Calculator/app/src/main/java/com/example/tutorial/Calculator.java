@@ -102,7 +102,7 @@ public class Calculator {
             if (t.isOperator()) { // �������϶�
                 try {
                     if (t.getToken().equals("m") || t.getToken().equals("~")) { // ���� �������϶�
-
+                        System.out.println("??????????????????????????");
                         double num1 = Double.parseDouble(stack.pop().getToken());
                         stack.push(new Token(calculate(num1, t.getToken())));
 
@@ -150,7 +150,7 @@ public class Calculator {
 
     private boolean isOperator(String s) {
         try {
-            Integer.parseInt(s); // s �� ���ڷ� ��ȯ �Ǹ� �����ڰ� �ƴϹǷ� false
+            Double.parseDouble(s); // s �� ���ڷ� ��ȯ �Ǹ� �����ڰ� �ƴϹǷ� false
             return false;
         } catch (NumberFormatException e) {
             return true;

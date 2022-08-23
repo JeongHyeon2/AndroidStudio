@@ -9,14 +9,18 @@ public class Token {
 			operator =s; // �����ڿ� ����
 			setPriority(s);
 		}
-		else operand=Integer.parseInt(s); // �ǿ�����(����)�̸� �ǿ����ڿ� ����
+		else {
+			operand=Double.parseDouble(s); // �ǿ�����(����)�̸� �ǿ����ڿ� ����
+
+		}
 	}
 	public Token(double n) {
 		operand=n;
 	}
 	public boolean isOperator(String s) {
 		try {
-			Integer.parseInt(s); // s �� ���ڷ� ��ȯ �Ǹ� �����ڰ� �ƴϹǷ� false
+
+			Double.parseDouble(s); // s �� ���ڷ� ��ȯ �Ǹ� �����ڰ� �ƴϹǷ� false
 			return false;
 		} catch (NumberFormatException e) {
 			return true; 

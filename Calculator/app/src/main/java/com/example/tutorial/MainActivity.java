@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -21,9 +23,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         EditText expr = findViewById(R.id.expression);
         expr.setEnabled(false);
+
         Button button1, button2, button3, button4, button5,
-                button6, button7, button8, button9, button0, addBtn, mulBtn,
+                button6, button7, button8, button9, button0, addBtn, mulBtn, pointBtn,
                 devBtn, subBtn, deleteBtn, clearBtn, calculateBtn, openBracket,closeBracket,modulo;
+        LinearLayout linearLayout;
+        pointBtn = findViewById(R.id.button_point);
         openBracket = findViewById(R.id.openBracket);
         closeBracket = findViewById(R.id.closeBracket);
         modulo = findViewById(R.id.btnModulo);
@@ -45,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         button8 = findViewById(R.id.button8);
         button9 = findViewById(R.id.button9);
 
+        linearLayout = findViewById(R.id.parentLayout);
+
+
+
         try {
             calculateBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -58,20 +67,19 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if(exp.equals("")) return;
 
-                    ArrayList<Character> arr = new ArrayList<Character>();
+                    ArrayList<Character> arr = new ArrayList<>();
                     if (!(exp.charAt(0) >= '0' && exp.charAt(0) <= '9')&&exp.charAt(0)!='-') {
                         expr.setText("오류");
                     } else {
                         arr.add(exp.charAt(0));
                         for (int i = 1; i < exp.length(); i++) {
-                            if ((!(exp.charAt(i - 1) >= '0' && exp.charAt(i - 1) <= '9') && (exp.charAt(i) >= '0' && exp.charAt(i) <= '9'))) { // 문 수
+                            if (!isNumber(exp.charAt(i-1)) && isNumber(exp.charAt(i))) { // 문 수
                                 arr.add(' ');
-                            } else if (((exp.charAt(i - 1) >= '0' && exp.charAt(i - 1) <= '9') && !(exp.charAt(i) >= '0' && exp.charAt(i) <= '9'))) {
+                            } else if (isNumber(exp.charAt(i-1)) && !isNumber(exp.charAt(i))) {
                                 arr.add(' ');   // 수 문
-                            } else if ((!(exp.charAt(i - 1) >= '0' && exp.charAt(i - 1) <= '9') && !((exp.charAt(i) >= '0' && exp.charAt(i) <= '9')))) {
-                                arr.add(' ');
+                            } else if (!isNumber(exp.charAt(i-1)) && !isNumber(exp.charAt(i))) {
+                                arr.add(' '); //문 문
                             }
-
                             arr.add(exp.charAt(i));
                         }
                     }
@@ -83,8 +91,21 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         calculator.cal(sb.toString());
-                        expr.setText(calculator.getAnswer());
-                        exp = "";
+                        String answer = calculator.getAnswer();
+                        String [] temp = answer.split("\\.");
+
+                        if(temp.length>1){
+                            if(isZero(temp[1])){
+                                expr.setText(temp[0]);
+                                exp = temp[0];
+                            }else{
+                                expr.setText(answer);
+                                exp = expr.getText().toString();
+                            }
+                        }else {
+                            expr.setText(answer);
+                            exp = expr.getText().toString();
+                        }
                     } catch (Exception e) {
                         expr.setText("오류");
                         exp = "";
@@ -164,6 +185,13 @@ public class MainActivity extends AppCompatActivity {
                 expr.setText(exp);
             }
         });
+        pointBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exp+=".";
+                expr.setText(exp);
+            }
+        });
         button0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -237,7 +265,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public boolean isZero(String s){
 
+        for(int i=0;i<s.length();i++){
+            if(!s.equals("0")) return false;
+
+        }
+        return true;
+    }
+    public boolean isNumber(char c){
+        if(c>='0'&&c<'9' || c=='.') return true;
+        return false;
+    }
     public boolean isOperator(String s) {
         try {
             Integer.parseInt(s); // s �� ���ڷ� ��ȯ �Ǹ� �����ڰ� �ƴϹǷ� false
