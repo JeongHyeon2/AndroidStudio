@@ -1,24 +1,37 @@
 package com.example.tutorial;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private String exp = "";
+    static int prime=7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Toolbar toolbar = findViewById (R.id.toolbar_main);
+        setSupportActionBar (toolbar); //액티비티의 앱바(App Bar)로 지정
 
         setContentView(R.layout.activity_main);
         EditText expr = findViewById(R.id.expression);
@@ -27,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         Button button1, button2, button3, button4, button5,
                 button6, button7, button8, button9, button0, addBtn, mulBtn, pointBtn,
                 devBtn, subBtn, deleteBtn, clearBtn, calculateBtn, openBracket,closeBracket,modulo;
-        LinearLayout linearLayout;
+        ImageButton btn_setting;
+
         pointBtn = findViewById(R.id.button_point);
         openBracket = findViewById(R.id.openBracket);
         closeBracket = findViewById(R.id.closeBracket);
@@ -49,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
         button7 = findViewById(R.id.button7);
         button8 = findViewById(R.id.button8);
         button9 = findViewById(R.id.button9);
+        btn_setting = findViewById(R.id.btn_setting);
 
-        linearLayout = findViewById(R.id.parentLayout);
 
 
 
@@ -93,18 +107,19 @@ public class MainActivity extends AppCompatActivity {
                         calculator.cal(sb.toString());
                         String answer = calculator.getAnswer();
                         String [] temp = answer.split("\\.");
-
                         if(temp.length>1){
                             if(isZero(temp[1])){
                                 expr.setText(temp[0]);
                                 exp = temp[0];
                             }else{
+                                answer = String.format("%."+prime+"f", Double.parseDouble(answer));
                                 expr.setText(answer);
-                                exp = expr.getText().toString();
+                                exp = answer;
                             }
                         }else {
+                            answer = String.format("%."+prime+"f", answer);
                             expr.setText(answer);
-                            exp = expr.getText().toString();
+                            exp = answer;
                         }
                     } catch (Exception e) {
                         expr.setText("오류");
@@ -118,6 +133,13 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
 
         }
+        btn_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,PopUpActivity.class);
+                startActivity(intent);
+            }
+        });
 
         clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +178,7 @@ public class MainActivity extends AppCompatActivity {
                 expr.setText(exp);
             }
         });
+
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -265,6 +288,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
     public boolean isZero(String s){
 
         for(int i=0;i<s.length();i++){
@@ -273,33 +297,10 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
     public boolean isNumber(char c){
-        if(c>='0'&&c<'9' || c=='.') return true;
+        if(c>='0'&& c<='9' || c=='.') return true;
         return false;
     }
-    public boolean isOperator(String s) {
-        try {
-            Integer.parseInt(s); // s �� ���ڷ� ��ȯ �Ǹ� �����ڰ� �ƴϹǷ� false
-            return false;
-        } catch (NumberFormatException e) {
-            return true;
-        }
-    }
 
-    public void addClick(View v) {
-
-    }
-
-    public void subClick(View v) {
-
-    }
-
-    public void mulClick(View v) {
-
-    }
-
-    public void devClick(View v) {
-
-
-    }
 }

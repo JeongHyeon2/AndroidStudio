@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/35752/AndroidStudioProjects/Calculator/app/src/main/res/layout/activity_main.xml" value="0.28940217391304346" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Calculator/app/src/main/res/layout/activity_popup.xml" value="0.30520833333333336" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Calculator/app/src/main/res/layout/toolbar.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Calculator/app/src/main/res/menu/activity_popup.xml" value="0.30520833333333336" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Calculator/app/src/main/res/menu/menu_toolbar.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/35752/AndroidStudioProjects/Tutorial/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
       </map>
     </option>
