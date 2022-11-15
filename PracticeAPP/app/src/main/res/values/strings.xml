@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">PracticeAPP</string>
+    <dimen name="my_margin">30</dimen>
+    <dimen name="my_padding">35</dimen>
+    <color name="my_color">#AF1D1D</color>
+
+    <style name="my_style">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="mySubStyle" parent="my_style">
+        <item name="android:textStyle">italic</item>
+    </style>
+</resources>

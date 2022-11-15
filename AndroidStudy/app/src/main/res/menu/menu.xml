@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/menu1"
+        android:icon="@mipmap/ic_launcher_round"
+        android:title="선택1"></item>
+    <item android:id="@+id/menu2"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_launcher_foreground"
+        android:title="선택2"></item>
+
+    <item android:id="@+id/menu_main_search"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Search"
+        app:actionViewClass="android.widget.SearchView"></item>
+
+</menu>

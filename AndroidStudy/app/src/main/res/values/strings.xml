@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AndroidStudy</string>
+    <string-array name="array_voice">
+        <item>카톡</item>
+        <item>카톡왔숑</item>
+        <item>카카오톡</item>
+        <item>카톡카톡</item>
+    </string-array>
+    <array name="location">
+        <item>울산</item>
+        <item>부산</item>
+        <item>대구</item>
+        <item>대전</item>
+    </array>
+    <string name="query_hint">검색</string>
+</resources>

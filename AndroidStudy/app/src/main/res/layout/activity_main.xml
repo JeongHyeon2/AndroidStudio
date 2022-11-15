@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+   <ProgressBar
+       android:id="@+id/progress"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       style="?android:attr/progressBarStyleHorizontal"
+       android:max="100">
+
+   </ProgressBar>
+   <ImageView
+       android:background="@android:drawable/ic_dialog_email"
+       android:id="@+id/image"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      ></ImageView>
+
+   <com.example.androidstudy.MyView
+       android:id="@+id/myview"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       custom:customColor="#FF0000"></com.example.androidstudy.MyView>
+   <TextView
+      android:id="@+id/textview"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+      android:text="0"
+       android:textSize="30dp"
+      ></TextView>
+
+
+</LinearLayout>

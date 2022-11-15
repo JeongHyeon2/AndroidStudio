@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="message"
+        android:title="소리알림"
+        android:summary="소리로 알림을 받으려면 체크하세요">
+    </CheckBoxPreference>
+    <SwitchPreference
+        android:key="vibrate"
+        android:title="진동알림"
+        android:summary="진동 울림으로 알림을 받으려면 체크하세요">
+    </SwitchPreference>
+    <EditTextPreference
+        android:key="nickname"
+        android:title="닉네임 설정"
+        android:summary="닉네임을 입력해주세요"
+        ></EditTextPreference>
+    <ListPreference
+        android:key="sound"
+        android:title="알림음"
+        android:summary="카톡"
+        android:entries="@array/array_voice"
+        android:entryValues="@array/array_voice"
+        ></ListPreference>
+</PreferenceScreen>
