@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/app/src/main/res/layout/activity_main.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/app/src/main/res/layout/fragment_one.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/app/src/main/res/layout/fragment_two.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/bottomsheet/src/main/res/layout/activity_main.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/lab18_3activity/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/lab18_3activity/src/main/res/menu/menu_lab3.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/lab18_4activity/src/main/res/drawable/ic_launcher_background.xml" value="0.2185" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/lab18_4activity/src/main/res/layout/activity_main.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/lab18_4activity/src/main/res/layout/lab4_modal_sheet.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/lab18_4activity/src/main/res/layout/lab4_sheet_row.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/mission1/src/main/res/drawable/round.xml" value="0.2185" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/mission1/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/mission1/src/main/res/layout/fragment_one.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/mission1/src/main/res/layout/fragment_three.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/mission1/src/main/res/layout/fragment_two.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/mission3/src/main/res/drawable/circle_background.xml" value="0.2185" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/mission3/src/main/res/layout/activity_main.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/mission3/src/main/res/layout/mission3_item_data.xml" value="0.3451086956521739" />
+        <entry key="..\:/Users/35752/AndroidStudioProjects/Material/mission3/src/main/res/layout/mission3_item_header.xml" value="0.3451086956521739" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
